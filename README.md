@@ -33,3 +33,12 @@ The 2nd and 3rd lines back up your existing vim configuration if you have one.  
   * mini buffer explorer: A tab-like experience for buffers
   * syntastic: In-editor errors and warnings for most programming languages
   * align: Easily align lines of text on an identifier 
+
+# Troubleshooting
+
+_Whaaaa!  Why doesn't my vim have really nice colors like the screenshot?_
+
+That's probably because your terminal emulator isn't in the correct color mode.  
+Try setting the color mode in your terminal to xterm-256color.  If you can't find a setting in your 
+terminal emulator try running the command `TERM=xterm-256color` in bash.  Then try running vim.
+If that works, put `TERM=xterm-256color` in your .bashrc file.
