@@ -13,8 +13,8 @@ that doesn't look half bad either.
 In your favorite shell, run the following
 
     cd ~
-    mv .git .git.bak
-    mv .gitrc .gitrc.bak
+    mv .vim .vim.bak
+    mv .vimrc .vimrc.bak
     git clone --recursive https://github.com/TyOverby/.vim.git
     bash ./.git/setup.sh
     
