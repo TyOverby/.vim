@@ -20,6 +20,8 @@ In your favorite shell, run the following
     
 The 2nd and 3rd lines back up your existing vim configuration if you have one.  If these commands fail, don't worry about it.
 
+# Screenshot
+
 ![Vim](http://i.imgur.com/ljVQS89.png?1)
 
 # Features
