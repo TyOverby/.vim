@@ -16,7 +16,7 @@ In your favorite shell, run the following
     mv .vim .vim.bak 2> /dev/null
     mv .vimrc .vimrc.bak 2> /dev/null
     git clone --recursive https://github.com/TyOverby/.vim.git
-    bash ./.git/setup.sh
+    bash ./.vim/setup.sh
     
 The 2nd and 3rd lines back up your existing vim configuration if you have one.  If these commands fail, don't worry about it.
 
