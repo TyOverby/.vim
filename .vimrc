@@ -37,6 +37,7 @@ au InsertEnter * :set nu
 au InsertLeave * :set rnu
 set rnu
 autocmd BufRead,BufNewFile * setlocal nospell
+set viminfo=
 
 
 " Remove trailing whitespace on save
