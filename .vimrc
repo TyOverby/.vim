@@ -11,6 +11,10 @@ Plugin 'jonathanfilip/vim-lucius'
 Plugin 'fholgado/minibufexpl.vim'
 Plugin 'scrooloose/syntastic'
 Plugin 'vim-scripts/Align'
+Plugin 'digitaltoad/vim-jade'
+Plugin 'plasticboy/vim-markdown'
+Plugin 'wting/rust.vim'
+Plugin 'kien/ctrlp.vim'
 
 filetype plugin indent on
 
@@ -37,6 +41,14 @@ au InsertEnter * :set nu
 au InsertLeave * :set rnu
 set rnu
 autocmd BufRead,BufNewFile * setlocal nospell
+set viminfo=
+
+" Tabs
+set softtabstop=4
+set tabstop=4
+set shiftwidth=4
+set expandtab
+filetype plugin indent on
 
 
 " Remove trailing whitespace on save
@@ -62,3 +74,4 @@ set t_co=256
 autocmd BufRead,BufNewFile * colorscheme lucius
 autocmd BufRead,BufNewFile * syntax enable
 autocmd BufRead,BufNewFile * LuciusDark
+
