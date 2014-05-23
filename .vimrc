@@ -15,6 +15,7 @@ Plugin 'digitaltoad/vim-jade'
 Plugin 'plasticboy/vim-markdown'
 Plugin 'wting/rust.vim'
 Plugin 'kien/ctrlp.vim'
+Plugin 'tpope/vim-sensible'
 
 filetype plugin indent on
 
