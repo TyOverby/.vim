@@ -16,6 +16,9 @@ Plugin 'plasticboy/vim-markdown'
 Plugin 'wting/rust.vim'
 Plugin 'kien/ctrlp.vim'
 Plugin 'tpope/vim-sensible'
+Plugin 'scrooloose/nerdtree'
+Plugin 'jistr/vim-nerdtree-tabs'
+Plugin 'derekwyatt/vim-scala'
 
 filetype plugin indent on
 
@@ -75,4 +78,3 @@ set t_co=256
 autocmd BufRead,BufNewFile * colorscheme lucius
 autocmd BufRead,BufNewFile * syntax enable
 autocmd BufRead,BufNewFile * LuciusDark
-
