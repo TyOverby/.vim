@@ -19,6 +19,7 @@ Plugin 'tpope/vim-sensible'
 Plugin 'scrooloose/nerdtree'
 Plugin 'jistr/vim-nerdtree-tabs'
 Plugin 'derekwyatt/vim-scala'
+Plugin 'szw/vim-ctrlspace'
 
 filetype plugin indent on
 
