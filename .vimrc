@@ -7,22 +7,23 @@ set rtp+=~/.vim/bundle/vundle
 call vundle#rc()
 
 " Highly Recommended
-Plugin 'gmarik/vundle'            " Package Manager
-Plugin 'jonathanfilip/vim-lucius' " Dark Theme
-Plugin 'scrooloose/syntastic'     " Syntax checker
-Plugin 'vim-scripts/Align'        " Text alignment command
-Plugin 'kien/ctrlp.vim'           " Fuzzy file search
-Plugin 'tpope/vim-sensible'       " Good default vim settings
-Plugin 'scrooloose/nerdtree'      " File tree
-Plugin 'jistr/vim-nerdtree-tabs'  " Better extension NerdTree
-Plugin 'szw/vim-ctrlspace'        " Workspace Manager
+Plugin 'gmarik/vundle'             " Package Manager
+Plugin 'jonathanfilip/vim-lucius'  " Dark Theme
+Plugin 'scrooloose/syntastic'      " Syntax checker
+Plugin 'vim-scripts/Align'         " Text alignment command
+Plugin 'kien/ctrlp.vim'            " Fuzzy file search
+Plugin 'tpope/vim-sensible'        " Good default vim settings
+Plugin 'scrooloose/nerdtree'       " File tree
+Plugin 'jistr/vim-nerdtree-tabs'   " Better extension NerdTree
+Plugin 'szw/vim-ctrlspace'         " Workspace Manager
 
 " Language specific
-Plugin 'derekwyatt/vim-scala'
-Plugin 'plasticboy/vim-markdown'
-Plugin 'digitaltoad/vim-jade'
-Plugin 'wting/rust.vim'
-Plugin 'dart-lang/dart-vim-plugin'
+Plugin 'derekwyatt/vim-scala'      " Scala
+Plugin 'plasticboy/vim-markdown'   " Markdown
+Plugin 'digitaltoad/vim-jade'      " Jade
+Plugin 'wting/rust.vim'            " Rust
+Plugin 'dart-lang/dart-vim-plugin' " Dart
+Plugin 'othree/html5.vim'          " Html 5
 let g:syntastic_dart_checkers=['']
 
 " Optional
