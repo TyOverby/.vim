@@ -7,12 +7,12 @@ set rtp+=~/.vim/bundle/vundle
 call vundle#rc()
 
 " Highly Recommended
+Plugin 'tpope/vim-sensible'        " Good default vim settings
 Plugin 'gmarik/vundle'             " Package Manager
 Plugin 'jonathanfilip/vim-lucius'  " Dark Theme
 Plugin 'scrooloose/syntastic'      " Syntax checker
 Plugin 'vim-scripts/Align'         " Text alignment command
 Plugin 'kien/ctrlp.vim'            " Fuzzy file search
-Plugin 'tpope/vim-sensible'        " Good default vim settings
 Plugin 'scrooloose/nerdtree'       " File tree
 Plugin 'jistr/vim-nerdtree-tabs'   " Better extension NerdTree
 Plugin 'szw/vim-ctrlspace'         " Workspace Manager
@@ -56,6 +56,11 @@ set rnu
 autocmd BufRead,BufNewFile * setlocal nospell
 set viminfo=
 
+
+" NERDTree options
+map <Tab> :NERDTreeTabsToggle<CR>
+let NERDTreeMinimalUI=1
+
 " Tabs
 set softtabstop=4
 set tabstop=4
@@ -83,6 +88,7 @@ autocmd BufWritePre * call <SID>StripTrailingWhitespaces()
 
 " Theme
 set t_co=256
+colorscheme lucius
 
 autocmd BufRead,BufNewFile * colorscheme lucius
 autocmd BufRead,BufNewFile * syntax enable
