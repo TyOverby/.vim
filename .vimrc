@@ -50,7 +50,7 @@ set ttimeoutlen=0
 " Misc preferences
 nnoremap ; :
 nnoremap Y y$
-au InsertEnter * :set nu
+au InsertEnter * :set nornu| set nu
 au InsertLeave * :set rnu
 set rnu
 autocmd BufRead,BufNewFile * setlocal nospell
