@@ -6,20 +6,20 @@ filetype off
 set rtp+=~/.vim/bundle/vundle
 call vundle#rc()
 
+Plugin 'tpope/vim-sensible'
 Plugin 'gmarik/vundle'
 Plugin 'jonathanfilip/vim-lucius'
-Plugin 'fholgado/minibufexpl.vim'
 Plugin 'scrooloose/syntastic'
 Plugin 'vim-scripts/Align'
 Plugin 'digitaltoad/vim-jade'
 Plugin 'plasticboy/vim-markdown'
 Plugin 'wting/rust.vim'
 Plugin 'kien/ctrlp.vim'
-Plugin 'tpope/vim-sensible'
 Plugin 'scrooloose/nerdtree'
 Plugin 'jistr/vim-nerdtree-tabs'
 Plugin 'derekwyatt/vim-scala'
 Plugin 'szw/vim-ctrlspace'
+Plugin 'othree/html5.vim'
 
 filetype plugin indent on
 
@@ -42,7 +42,7 @@ set ttimeoutlen=0
 " Misc preferences
 nnoremap ; :
 nnoremap Y y$
-au InsertEnter * :set nu
+au InsertEnter * :set nornu| set nu
 au InsertLeave * :set rnu
 set rnu
 autocmd BufRead,BufNewFile * setlocal nospell
