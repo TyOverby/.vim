@@ -6,20 +6,28 @@ filetype off
 set rtp+=~/.vim/bundle/vundle
 call vundle#rc()
 
-Plugin 'tpope/vim-sensible'
-Plugin 'gmarik/vundle'
-Plugin 'jonathanfilip/vim-lucius'
-Plugin 'scrooloose/syntastic'
-Plugin 'vim-scripts/Align'
-Plugin 'digitaltoad/vim-jade'
-Plugin 'plasticboy/vim-markdown'
-Plugin 'wting/rust.vim'
-Plugin 'kien/ctrlp.vim'
-Plugin 'scrooloose/nerdtree'
-Plugin 'jistr/vim-nerdtree-tabs'
-Plugin 'derekwyatt/vim-scala'
-Plugin 'szw/vim-ctrlspace'
-Plugin 'othree/html5.vim'
+" Highly Recommended
+Plugin 'tpope/vim-sensible'        " Good default vim settings
+Plugin 'gmarik/vundle'             " Package Manager
+Plugin 'jonathanfilip/vim-lucius'  " Dark Theme
+Plugin 'scrooloose/syntastic'      " Syntax checker
+Plugin 'vim-scripts/Align'         " Text alignment command
+Plugin 'kien/ctrlp.vim'            " Fuzzy file search
+Plugin 'scrooloose/nerdtree'       " File tree
+Plugin 'jistr/vim-nerdtree-tabs'   " Better extension NerdTree
+Plugin 'szw/vim-ctrlspace'         " Workspace Manager
+
+" Language specific
+Plugin 'derekwyatt/vim-scala'      " Scala
+Plugin 'plasticboy/vim-markdown'   " Markdown
+Plugin 'digitaltoad/vim-jade'      " Jade
+Plugin 'wting/rust.vim'            " Rust
+Plugin 'dart-lang/dart-vim-plugin' " Dart
+Plugin 'othree/html5.vim'          " Html 5
+let g:syntastic_dart_checkers=['']
+
+" Optional
+" Plugin 'fholgado/minibufexpl.vim'
 
 filetype plugin indent on
 
@@ -79,3 +87,5 @@ set t_co=256
 autocmd BufRead,BufNewFile * colorscheme lucius
 autocmd BufRead,BufNewFile * syntax enable
 autocmd BufRead,BufNewFile * LuciusDark
+
+set fillchars+=vert:_
