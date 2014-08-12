@@ -95,3 +95,5 @@ autocmd BufRead,BufNewFile * syntax enable
 autocmd BufRead,BufNewFile * LuciusDark
 
 set fillchars+=vert:_
+
+set cc=80
