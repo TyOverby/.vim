@@ -17,6 +17,7 @@ Plugin 'kien/ctrlp.vim'            " Fuzzy file search
 Plugin 'scrooloose/nerdtree'       " File tree
 Plugin 'jistr/vim-nerdtree-tabs'   " Better extension NerdTree
 Plugin 'szw/vim-ctrlspace'         " Workspace Manager
+Plugin 'vim-scripts/CSApprox'      " Approximate themes on terminal
 
 " Language specific
 Plugin 'derekwyatt/vim-scala'      " Scala
@@ -90,11 +91,15 @@ autocmd BufWritePre * call <SID>StripTrailingWhitespaces()
 
 
 " Theme
-set t_co=256
-colo base16-ocean
-"colorscheme lucius
+if has('gui_running')
+    colo base16-ocean
+    autocmd BufRead,BufNewFile * colorscheme base16-ocean
+else
+    set t_co=256
+    colo lucius
+    autocmd BufRead,BufNewFile * colorscheme lucius
+endif
 
-autocmd BufRead,BufNewFile * colorscheme base16-ocean
 autocmd BufRead,BufNewFile * syntax enable
 
 set fillchars+=vert:_
