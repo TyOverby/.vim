@@ -60,6 +60,8 @@ set viminfo=
 " NERDTree options
 map <Tab> :NERDTreeTabsToggle<CR>
 let NERDTreeMinimalUI=1
+" Release the usage of ? for backwards searching
+let NERDTreeMapHelp='<f1>'
 
 " Tabs
 set softtabstop=4
