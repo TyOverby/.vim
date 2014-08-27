@@ -18,6 +18,7 @@ Plugin 'scrooloose/nerdtree'       " File tree
 Plugin 'jistr/vim-nerdtree-tabs'   " Better extension NerdTree
 Plugin 'szw/vim-ctrlspace'         " Workspace Manager
 Plugin 'vim-scripts/CSApprox'      " Approximate themes on terminal
+Plugin 'Raimondi/delimitMate'      " Automatic delimeter insertion
 
 " Language specific
 Plugin 'derekwyatt/vim-scala'      " Scala
@@ -105,3 +106,8 @@ autocmd BufRead,BufNewFile * syntax enable
 set fillchars+=vert:_
 
 set cc=81
+
+" Delimitmate
+let g:delimitMate_backspace = 2
+let g:delimitMate_expand_cr = 2
+let g:delimitMate_expand_space = 1
