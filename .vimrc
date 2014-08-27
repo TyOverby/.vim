@@ -10,6 +10,7 @@ call vundle#rc()
 Plugin 'tpope/vim-sensible'        " Good default vim settings
 Plugin 'gmarik/vundle'             " Package Manager
 Plugin 'jonathanfilip/vim-lucius'  " Dark Theme
+Plugin 'chriskempson/base16-vim'   " Base16 Theme
 Plugin 'scrooloose/syntastic'      " Syntax checker
 Plugin 'vim-scripts/Align'         " Text alignment command
 Plugin 'kien/ctrlp.vim'            " Fuzzy file search
@@ -90,11 +91,11 @@ autocmd BufWritePre * call <SID>StripTrailingWhitespaces()
 
 " Theme
 set t_co=256
-colorscheme lucius
+colo base16-ocean
+"colorscheme lucius
 
-autocmd BufRead,BufNewFile * colorscheme lucius
+autocmd BufRead,BufNewFile * colorscheme base16-ocean
 autocmd BufRead,BufNewFile * syntax enable
-autocmd BufRead,BufNewFile * LuciusDark
 
 set fillchars+=vert:_
 
