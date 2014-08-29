@@ -17,8 +17,8 @@ Plugin 'kien/ctrlp.vim'            " Fuzzy file search
 Plugin 'scrooloose/nerdtree'       " File tree
 Plugin 'jistr/vim-nerdtree-tabs'   " Better extension NerdTree
 Plugin 'szw/vim-ctrlspace'         " Workspace Manager
-Plugin 'vim-scripts/CSApprox'      " Approximate themes on terminal
 Plugin 'Raimondi/delimitMate'      " Automatic delimeter insertion
+Plugin 'tpope/vim-fugitive'        " Git commands
 
 " Language specific
 Plugin 'derekwyatt/vim-scala'      " Scala
