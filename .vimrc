@@ -90,6 +90,16 @@ endfunction
 filetype plugin on
 autocmd BufWritePre * call <SID>StripTrailingWhitespaces()
 
+"smart indent when entering insert mode with i on empty lines
+function! IndentWithI()
+    if len(getline('.')) == 0
+        return "\"_ddO"
+    else
+        return "i"
+    endif
+endfunction
+nnoremap <expr> i IndentWithI()
+
 
 " Theme
 if has('gui_running')
