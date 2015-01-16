@@ -21,12 +21,13 @@ Plugin 'Raimondi/delimitMate'      " Automatic delimeter insertion
 Plugin 'tpope/vim-fugitive'        " Git commands
 
 " Language specific
-Plugin 'derekwyatt/vim-scala'      " Scala
-Plugin 'plasticboy/vim-markdown'   " Markdown
-Plugin 'digitaltoad/vim-jade'      " Jade
-Plugin 'wting/rust.vim'            " Rust
-Plugin 'dart-lang/dart-vim-plugin' " Dart
-Plugin 'othree/html5.vim'          " Html 5
+Plugin 'derekwyatt/vim-scala'         " Scala
+Plugin 'plasticboy/vim-markdown'      " Markdown
+Plugin 'digitaltoad/vim-jade'         " Jade
+Plugin 'wting/rust.vim'               " Rust
+Plugin 'dart-lang/dart-vim-plugin'    " Dart
+Plugin 'othree/html5.vim'             " Html 5
+Plugin 'leafgarland/typescript-vim' " Typescript
 let g:syntastic_dart_checkers=['']
 
 " Optional
@@ -105,10 +106,12 @@ nnoremap <expr> i IndentWithI()
 if has('gui_running')
     colo base16-ocean
     autocmd BufRead,BufNewFile * colorscheme base16-ocean
+    set background=dark
 else
     set t_co=256
     colo lucius
     autocmd BufRead,BufNewFile * colorscheme lucius
+    set background=dark
 endif
 
 autocmd BufRead,BufNewFile * syntax enable
