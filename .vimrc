@@ -121,3 +121,7 @@ set cc=81
 let g:delimitMate_backspace = 2
 let g:delimitMate_expand_cr = 2
 let g:delimitMate_expand_space = 1
+
+" Disable shit highlighting
+set nohlsearch
+let g:loaded_matchparen=1
