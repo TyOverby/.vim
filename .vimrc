@@ -27,7 +27,12 @@ Plugin 'digitaltoad/vim-jade'      " Jade
 Plugin 'wting/rust.vim'            " Rust
 Plugin 'dart-lang/dart-vim-plugin' " Dart
 Plugin 'othree/html5.vim'          " Html 5
+
+Plugin 'junegunn/goyo.vim' " Semantic coloring!
+Plugin 'severin-lemaignan/vim-minimap' " Semantic coloring!
+
 let g:syntastic_dart_checkers=['']
+let g:syntastic_always_populate_loc_list = 1
 
 " Optional
 " Plugin 'fholgado/minibufexpl.vim'
@@ -105,6 +110,13 @@ nnoremap <expr> i IndentWithI()
 if has('gui_running')
     colo base16-ocean
     autocmd BufRead,BufNewFile * colorscheme base16-ocean
+    " Remove all toolbars
+    set guioptions-=m
+    set guioptions-=T
+    "set guioptions-=r
+    "set guioptions-=L
+    " Disable mouse
+    set mouse=c
 else
     set t_co=256
     colo lucius
@@ -125,3 +137,6 @@ let g:delimitMate_expand_space = 1
 " Disable shit highlighting
 set nohlsearch
 let g:loaded_matchparen=1
+
+" Limelight
+let g:limelight_conceal_ctermfg = 'gray'
