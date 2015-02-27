@@ -127,7 +127,7 @@ autocmd BufRead,BufNewFile * syntax enable
 
 set fillchars+=vert:_
 
-set cc=81
+" set cc=81
 
 " Delimitmate
 let g:delimitMate_backspace = 2
