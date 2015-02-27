@@ -19,6 +19,9 @@ Plugin 'jistr/vim-nerdtree-tabs'   " Better extension NerdTree
 Plugin 'szw/vim-ctrlspace'         " Workspace Manager
 Plugin 'Raimondi/delimitMate'      " Automatic delimeter insertion
 Plugin 'tpope/vim-fugitive'        " Git commands
+Plugin 'ervandew/supertab'         " Tab completion!
+"Plugin 'eparreno/vim-l9'
+"Plugin 'othree/vim-autocomplpop'
 
 " Language specific
 Plugin 'derekwyatt/vim-scala'      " Scala
@@ -27,9 +30,19 @@ Plugin 'digitaltoad/vim-jade'      " Jade
 Plugin 'wting/rust.vim'            " Rust
 Plugin 'dart-lang/dart-vim-plugin' " Dart
 Plugin 'othree/html5.vim'          " Html 5
+Plugin 'phildawes/racer'           " Rust (more)
 
-Plugin 'junegunn/goyo.vim' " Semantic coloring!
-Plugin 'severin-lemaignan/vim-minimap' " Semantic coloring!
+" colors
+"
+Plugin 'xolox/vim-misc'
+Plugin 'xolox/vim-colorscheme-switcher'
+Plugin 'yamafaktory/lumberjack.vim'
+Plugin 'vyshane/vydark-vim-color'
+Plugin 'carlson-erik/wolfpack'
+Plugin 'ajh17/Spacegray.vim'
+Plugin 'vim-scripts/strange'
+Plugin 'adlawson/vim-sorcerer'
+Plugin 'jeetsukumaran/vim-nefertiti'
 
 let g:syntastic_dart_checkers=['']
 let g:syntastic_always_populate_loc_list = 1
@@ -108,8 +121,9 @@ nnoremap <expr> i IndentWithI()
 
 " Theme
 if has('gui_running')
-    colo base16-ocean
-    autocmd BufRead,BufNewFile * colorscheme base16-ocean
+    colo base16-ocean-mono
+    set background=dark
+    autocmd BufRead,BufNewFile * colorscheme base16-ocean-mono
     " Remove all toolbars
     set guioptions-=m
     set guioptions-=T
@@ -120,6 +134,7 @@ if has('gui_running')
 else
     set t_co=256
     colo lucius
+    set background=dark
     autocmd BufRead,BufNewFile * colorscheme lucius
 endif
 
@@ -136,3 +151,16 @@ let g:delimitMate_expand_space = 1
 
 " Limelight
 let g:limelight_conceal_ctermfg = 'gray'
+
+
+" Autocomplete
+let g:SuperTabDefaultCompletionType = "<c-x><c-o>"
+set completeopt=longest,menuone,preview
+noremap <expr> <CR> pumvisible() ? "\<C-y>" : "\<C-g>u\<CR>"
+inoremap <expr> <C-n> pumvisible() ? '<C-n>' :
+  \ '<C-n><C-r>=pumvisible() ? "\<lt>Down>" : ""<CR>'
+
+inoremap <expr> <M-,> pumvisible() ? '<C-n>' :
+  \ '<C-x><C-o><C-n><C-p><C-r>=pumvisible() ? "\<lt>Down>" : ""<CR>'
+
+
