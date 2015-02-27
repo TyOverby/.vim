@@ -121,9 +121,9 @@ nnoremap <expr> i IndentWithI()
 
 " Theme
 if has('gui_running')
-    colo base16-ocean-mono
+    colo base16-ocean
+    autocmd BufRead,BufNewFile * colorscheme base16-ocean
     set background=dark
-    autocmd BufRead,BufNewFile * colorscheme base16-ocean-mono
     " Remove all toolbars
     set guioptions-=m
     set guioptions-=T
@@ -136,6 +136,7 @@ else
     colo lucius
     set background=dark
     autocmd BufRead,BufNewFile * colorscheme lucius
+    set background=dark
 endif
 
 autocmd BufRead,BufNewFile * syntax enable
@@ -148,6 +149,10 @@ set cc=81
 let g:delimitMate_backspace = 2
 let g:delimitMate_expand_cr = 2
 let g:delimitMate_expand_space = 1
+
+" Disable shit highlighting
+set nohlsearch
+let g:loaded_matchparen=1
 
 " Limelight
 let g:limelight_conceal_ctermfg = 'gray'
