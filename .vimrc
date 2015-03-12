@@ -20,6 +20,7 @@ Plugin 'szw/vim-ctrlspace'         " Workspace Manager
 Plugin 'Raimondi/delimitMate'      " Automatic delimeter insertion
 Plugin 'tpope/vim-fugitive'        " Git commands
 Plugin 'ervandew/supertab'         " Tab completion!
+Plugin 'bling/vim-airline'         " Nicer status line
 "Plugin 'eparreno/vim-l9'
 "Plugin 'othree/vim-autocomplpop'
 
@@ -43,6 +44,7 @@ Plugin 'ajh17/Spacegray.vim'
 Plugin 'vim-scripts/strange'
 Plugin 'adlawson/vim-sorcerer'
 Plugin 'jeetsukumaran/vim-nefertiti'
+Plugin 'junegunn/seoul256.vim'
 
 let g:syntastic_dart_checkers=['']
 let g:syntastic_always_populate_loc_list = 1
@@ -121,16 +123,6 @@ nnoremap <expr> i IndentWithI()
 
 " Theme
 if has('gui_running')
-    colo base16-ocean
-    autocmd BufRead,BufNewFile * colorscheme base16-ocean
-    set background=dark
-    " Remove all toolbars
-    set guioptions-=m
-    set guioptions-=T
-    "set guioptions-=r
-    "set guioptions-=L
-    " Disable mouse
-    set mouse=c
 else
     set t_co=256
     colo lucius
@@ -168,4 +160,9 @@ inoremap <expr> <C-n> pumvisible() ? '<C-n>' :
 inoremap <expr> <M-,> pumvisible() ? '<C-n>' :
   \ '<C-x><C-o><C-n><C-p><C-r>=pumvisible() ? "\<lt>Down>" : ""<CR>'
 
+" don't make .swp or .swo files
+set nobackup
 
+" Airline
+let g:airline_powerline_fonts = 1
+let g:airline_theme="hybrid"
