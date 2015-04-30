@@ -21,6 +21,7 @@ Plugin 'Raimondi/delimitMate'      " Automatic delimeter insertion
 Plugin 'tpope/vim-fugitive'        " Git commands
 Plugin 'ervandew/supertab'         " Tab completion!
 Plugin 'bling/vim-airline'         " Nicer status line
+Plugin '907th/vim-auto-save'       " Automatically saves files after edits
 "Plugin 'eparreno/vim-l9'
 "Plugin 'othree/vim-autocomplpop'
 
@@ -166,3 +167,8 @@ set nobackup
 " Airline
 let g:airline_powerline_fonts = 1
 let g:airline_theme="hybrid"
+
+
+" Auto Save
+let g:auto_save = 1
+let g:auto_save_silent = 1

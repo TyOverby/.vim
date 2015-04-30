@@ -12,3 +12,4 @@ set mouse=c
 set guifont=Dejavu\ Sans\ Mono\ for\ Powerline\ 10
 set linespace=-2
 let g:airline_theme="base16"
+set guiheadroom=0
