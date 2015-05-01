@@ -1,9 +1,14 @@
-" Disable basically all of the gvim UI
-set guioptions-=m  "remove menu bar
-set guioptions-=T  "remove toolbar
-set guioptions-=r  "remove right-hand scroll bar
-set guioptions-=L  "remove left-hand scroll bar
-
-
+colo base16-ocean-mono
+autocmd BufRead,BufNewFile * colorscheme base16-ocean-mono
+set background=dark
+" Remove all toolbars
+set guioptions-=m
+set guioptions-=T
+set guioptions-=r
+set guioptions-=L
+" Disable mouse
+"
+set mouse=c
+set guifont=Dejavu\ Sans\ Mono\ for\ Powerline\ 10
 set linespace=-2
-set guifont=Source\ Code\ Pro\ Regular\ 11
+let g:airline_theme="base16"
