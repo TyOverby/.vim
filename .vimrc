@@ -31,6 +31,8 @@ Plugin 'digitaltoad/vim-jade'      " Jade
 Plugin 'wting/rust.vim'            " Rust
 Plugin 'dart-lang/dart-vim-plugin' " Dart
 Plugin 'othree/html5.vim'          " Html 5
+Plugin 'fatih/vim-go'
+Plugin 'leafgarland/typescript-vim'
 "Plugin 'phildawes/racer'           " Rust (more)
 
 " colors

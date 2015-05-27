@@ -1,5 +1,5 @@
-colo base16-ocean-mono
-autocmd BufRead,BufNewFile * colorscheme base16-ocean-mono
+colo base16-ocean
+autocmd BufRead,BufNewFile * colorscheme base16-ocean
 set background=dark
 " Remove all toolbars
 set guioptions-=m
