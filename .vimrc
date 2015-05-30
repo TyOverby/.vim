@@ -21,19 +21,17 @@ Plugin 'Raimondi/delimitMate'      " Automatic delimeter insertion
 Plugin 'tpope/vim-fugitive'        " Git commands
 Plugin 'ervandew/supertab'         " Tab completion!
 Plugin 'bling/vim-airline'         " Nicer status line
+Plugin '907th/vim-auto-save'       " Automatically saves files after edits
 "Plugin 'eparreno/vim-l9'
 "Plugin 'othree/vim-autocomplpop'
 
 " Language specific
-Plugin 'derekwyatt/vim-scala'      " Scala
 Plugin 'plasticboy/vim-markdown'   " Markdown
-Plugin 'digitaltoad/vim-jade'      " Jade
 Plugin 'wting/rust.vim'            " Rust
 Plugin 'dart-lang/dart-vim-plugin' " Dart
 Plugin 'othree/html5.vim'          " Html 5
 Plugin 'fatih/vim-go'
-Plugin 'leafgarland/typescript-vim'
-"Plugin 'phildawes/racer'           " Rust (more)
+Plugin 'leafgarland/typescript-vim'            " Typescript
 
 " colors
 "
@@ -48,7 +46,7 @@ Plugin 'adlawson/vim-sorcerer'
 Plugin 'jeetsukumaran/vim-nefertiti'
 Plugin 'junegunn/seoul256.vim'
 
-let g:syntastic_dart_checkers=['']
+let g:syntastic_disabled_filetypes=['typescript']
 let g:syntastic_always_populate_loc_list = 1
 
 " Optional
@@ -168,3 +166,9 @@ set nobackup
 " Airline
 let g:airline_powerline_fonts = 1
 let g:airline_theme="hybrid"
+
+
+" Auto Save
+let g:auto_save = 1
+let g:auto_save_silent = 1
+let g:auto_save_in_insert_mode = 0
