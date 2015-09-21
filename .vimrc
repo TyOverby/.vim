@@ -8,6 +8,7 @@ call vundle#rc()
 
 " Highly Recommended
 Plugin 'tpope/vim-sensible'        " Good default vim settings
+Plugin 'tpope/vim-fugitive'        " Git commands
 Plugin 'gmarik/vundle'             " Package Manager
 Plugin 'scrooloose/syntastic'      " Syntax checker
 Plugin 'kien/ctrlp.vim'            " Fuzzy file search
@@ -15,10 +16,11 @@ Plugin 'scrooloose/nerdtree'       " File tree
 Plugin 'jistr/vim-nerdtree-tabs'   " Better extension NerdTree
 Plugin 'szw/vim-ctrlspace'         " Workspace Manager
 Plugin 'Raimondi/delimitMate'      " Automatic delimeter insertion
-Plugin 'tpope/vim-fugitive'        " Git commands
 Plugin 'ervandew/supertab'         " Tab completion!
 Plugin 'bling/vim-airline'         " Nicer status line
 Plugin '907th/vim-auto-save'       " Automatically saves files after edits
+Plugin 'rking/ag.vim'              " Integration for the ag file searcher
+Plugin 'ntpeters/vim-better-whitespace' " Remove trailing whitespace
 
 " Language specific
 Plugin 'plasticboy/vim-markdown'    " Markdown
@@ -27,9 +29,8 @@ Plugin 'othree/html5.vim'           " Html 5
 Plugin 'leafgarland/typescript-vim' " Typescript
 
 " colors
-"
-Plugin 'jonathanfilip/vim-lucius'  " Dark Theme
-Plugin 'chriskempson/base16-vim'   " Base16 Theme
+Plugin 'jonathanfilip/vim-lucius'
+Plugin 'chriskempson/base16-vim'
 Plugin 'xolox/vim-misc'
 Plugin 'xolox/vim-colorscheme-switcher'
 Plugin 'yamafaktory/lumberjack.vim'
@@ -41,14 +42,7 @@ Plugin 'adlawson/vim-sorcerer'
 Plugin 'jeetsukumaran/vim-nefertiti'
 Plugin 'junegunn/seoul256.vim'
 
-let g:syntastic_disabled_filetypes=['typescript']
-let g:syntastic_always_populate_loc_list = 1
-
-" Optional
-" Plugin 'fholgado/minibufexpl.vim'
-
 filetype plugin indent on
-
 
 " Misc editor features
 
@@ -64,7 +58,6 @@ set autowrite
 set ttimeout
 set ttimeoutlen=0
 
-
 " Misc preferences
 nnoremap ; :
 nnoremap Y y$
@@ -74,12 +67,10 @@ set rnu
 autocmd BufRead,BufNewFile * setlocal nospell
 set viminfo=
 
-
 " NERDTree options
 map <Tab> :NERDTreeTabsToggle<CR>
 let NERDTreeMinimalUI=1
-" Release the usage of ? for backwards searching
-let NERDTreeMapHelp='<f1>'
+let NERDTreeMapHelp='<f1>' " Release the usage of ? for backwards searching
 
 " Tabs
 set softtabstop=4
@@ -88,22 +79,8 @@ set shiftwidth=4
 set expandtab
 filetype plugin indent on
 
-
 " Remove trailing whitespace on save
-
-function! <SID>StripTrailingWhitespaces()
-  " Preparation: save last search, and cursor position.
-  let _s=@/
-  let l = line('.')
-  let c = col('.')
-  " Do the business:
-  %s/\s\+$//e
-  " Clean up: restore previous search history, and cursor position
-  let @/=_s
-  call cursor(l, c)
-endfunction
-filetype plugin on
-autocmd BufWritePre * call <SID>StripTrailingWhitespaces()
+autocmd BufWritePre * StripWhitespace
 
 "smart indent when entering insert mode with i on empty lines
 function! IndentWithI()
@@ -114,7 +91,6 @@ function! IndentWithI()
     endif
 endfunction
 nnoremap <expr> i IndentWithI()
-
 
 " Theme
 if has('gui_running')
@@ -130,8 +106,6 @@ autocmd BufRead,BufNewFile * syntax enable
 
 set fillchars+=vert:_
 
-" set cc=81
-
 " Delimitmate
 let g:delimitMate_backspace = 2
 let g:delimitMate_expand_cr = 2
@@ -143,7 +117,6 @@ let g:loaded_matchparen=1
 
 " Limelight
 let g:limelight_conceal_ctermfg = 'gray'
-
 
 " Autocomplete
 let g:SuperTabDefaultCompletionType = "<c-x><c-o>"
@@ -165,7 +138,6 @@ let g:airline_theme="hybrid"
 " Ctrl-Space
 set hidden
 
-
 " Auto Save
 let g:auto_save = 1
 let g:auto_save_silent = 1
@@ -177,4 +149,7 @@ if has("win32") || has("win16")
     set shellcmdflag=/c
 endif
 
+" Syntastic
+let g:syntastic_disabled_filetypes=['typescript']
+let g:syntastic_always_populate_loc_list = 1
 
