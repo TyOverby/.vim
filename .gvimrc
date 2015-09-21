@@ -9,8 +9,8 @@ set guioptions-=L
 " Disable mouse
 "
 set mouse=c
-"set guifont=Dejavu\ Sans\ Mono\ for\ Powerline\ 10
-set guifont=Office\ Code\ Pro\ Medium\ 11
+
+set guifont=Consolas:h12:cANSI
 set linespace=0
 let g:airline_theme="base16"
 set guiheadroom=0

@@ -9,10 +9,7 @@ call vundle#rc()
 " Highly Recommended
 Plugin 'tpope/vim-sensible'        " Good default vim settings
 Plugin 'gmarik/vundle'             " Package Manager
-Plugin 'jonathanfilip/vim-lucius'  " Dark Theme
-Plugin 'chriskempson/base16-vim'   " Base16 Theme
 Plugin 'scrooloose/syntastic'      " Syntax checker
-Plugin 'vim-scripts/Align'         " Text alignment command
 Plugin 'kien/ctrlp.vim'            " Fuzzy file search
 Plugin 'scrooloose/nerdtree'       " File tree
 Plugin 'jistr/vim-nerdtree-tabs'   " Better extension NerdTree
@@ -22,19 +19,17 @@ Plugin 'tpope/vim-fugitive'        " Git commands
 Plugin 'ervandew/supertab'         " Tab completion!
 Plugin 'bling/vim-airline'         " Nicer status line
 Plugin '907th/vim-auto-save'       " Automatically saves files after edits
-"Plugin 'eparreno/vim-l9'
-"Plugin 'othree/vim-autocomplpop'
 
 " Language specific
-Plugin 'plasticboy/vim-markdown'   " Markdown
-Plugin 'wting/rust.vim'            " Rust
-Plugin 'dart-lang/dart-vim-plugin' " Dart
-Plugin 'othree/html5.vim'          " Html 5
-Plugin 'fatih/vim-go'
-Plugin 'leafgarland/typescript-vim'            " Typescript
+Plugin 'plasticboy/vim-markdown'    " Markdown
+Plugin 'wting/rust.vim'             " Rust
+Plugin 'othree/html5.vim'           " Html 5
+Plugin 'leafgarland/typescript-vim' " Typescript
 
 " colors
 "
+Plugin 'jonathanfilip/vim-lucius'  " Dark Theme
+Plugin 'chriskempson/base16-vim'   " Base16 Theme
 Plugin 'xolox/vim-misc'
 Plugin 'xolox/vim-colorscheme-switcher'
 Plugin 'yamafaktory/lumberjack.vim'
@@ -167,8 +162,19 @@ set nobackup
 let g:airline_powerline_fonts = 1
 let g:airline_theme="hybrid"
 
+" Ctrl-Space
+set hidden
+
 
 " Auto Save
 let g:auto_save = 1
 let g:auto_save_silent = 1
 let g:auto_save_in_insert_mode = 0
+
+" Weird windows workarounds
+if has("win32") || has("win16")
+    set shell=cmd
+    set shellcmdflag=/c
+endif
+
+
