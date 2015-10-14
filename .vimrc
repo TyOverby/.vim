@@ -14,6 +14,8 @@ Plugin 'scrooloose/syntastic'      " Syntax checker
 Plugin 'kien/ctrlp.vim'            " Fuzzy file search
 Plugin 'scrooloose/nerdtree'       " File tree
 Plugin 'jistr/vim-nerdtree-tabs'   " Better extension NerdTree
+Plugin 'Xuyuanp/nerdtree-git-plugin' " Git symbols inside NerdTree
+Plugin 'airblade/vim-gitgutter'    " Git symbols in the gutter
 Plugin 'szw/vim-ctrlspace'         " Workspace Manager
 Plugin 'Raimondi/delimitMate'      " Automatic delimeter insertion
 Plugin 'ervandew/supertab'         " Tab completion!
@@ -77,6 +79,21 @@ let g:NERDTreeDirArrowExpandable = '▸'
 let g:NERDTreeDirArrowCollapsible = '▾'
 let g:NERDTreeCascadeOpenSingleChildDir = 1
 
+let g:NERDTreeIndicatorMapCustom = {
+    \ "Modified"  : "*",
+    \ "Staged"    : "+",
+    \ "Untracked" : "@",
+    \ "Renamed"   : "-",
+    \ "Unmerged"  : "=",
+    \ "Deleted"   : "x",
+    \ "Dirty"     : "-",
+    \ "Clean"     : "",
+    \ "Unknown"   : "?"
+    \ }
+
+" Git Gutter
+let g:gitgutter_sign_column_always = 1
+
 " Tabs
 set softtabstop=4
 set tabstop=4
@@ -105,7 +122,7 @@ let g:gruvbox_undercurl = 0
 let g:gruvbox_contrast_dark = "soft"
 let g:gruvbox_contrast_light = "soft"
 
-let g:lightline = { 'colorscheme': 'gruvbox', }
+let g:lightline = { 'colorscheme': 'wombat', }
 
 colo gruvbox
 syntax enable
