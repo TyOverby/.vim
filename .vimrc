@@ -17,7 +17,7 @@ Plugin 'jistr/vim-nerdtree-tabs'   " Better extension NerdTree
 Plugin 'szw/vim-ctrlspace'         " Workspace Manager
 Plugin 'Raimondi/delimitMate'      " Automatic delimeter insertion
 Plugin 'ervandew/supertab'         " Tab completion!
-Plugin 'bling/vim-airline'         " Nicer status line
+Plugin 'itchyny/lightline.vim'         " Nicer status line
 Plugin '907th/vim-auto-save'       " Automatically saves files after edits
 Plugin 'rking/ag.vim'              " Integration for the ag file searcher
 Plugin 'ntpeters/vim-better-whitespace' " Remove trailing whitespace
@@ -28,19 +28,20 @@ Plugin 'wting/rust.vim'             " Rust
 Plugin 'othree/html5.vim'           " Html 5
 Plugin 'leafgarland/typescript-vim' " Typescript
 
-" colors
-Plugin 'jonathanfilip/vim-lucius'
-Plugin 'chriskempson/base16-vim'
-Plugin 'xolox/vim-misc'
-Plugin 'xolox/vim-colorscheme-switcher'
-Plugin 'yamafaktory/lumberjack.vim'
-Plugin 'vyshane/vydark-vim-color'
-Plugin 'carlson-erik/wolfpack'
-Plugin 'ajh17/Spacegray.vim'
-Plugin 'vim-scripts/strange'
-Plugin 'adlawson/vim-sorcerer'
-Plugin 'jeetsukumaran/vim-nefertiti'
-Plugin 'junegunn/seoul256.vim'
+" colors (graveyard)
+" Plugin 'jonathanfilip/vim-lucius'
+" Plugin 'chriskempson/base16-vim'
+" Plugin 'xolox/vim-misc'
+" Plugin 'xolox/vim-colorscheme-switcher'
+" Plugin 'yamafaktory/lumberjack.vim'
+" Plugin 'vyshane/vydark-vim-color'
+" Plugin 'carlson-erik/wolfpack'
+" Plugin 'ajh17/Spacegray.vim'
+" Plugin 'vim-scripts/strange'
+" Plugin 'adlawson/vim-sorcerer'
+" Plugin 'jeetsukumaran/vim-nefertiti'
+" Plugin 'junegunn/seoul256.vim'
+Plugin 'morhetz/gruvbox'
 
 filetype plugin indent on
 
@@ -71,6 +72,10 @@ set viminfo=
 map <Tab> :NERDTreeTabsToggle<CR>
 let NERDTreeMinimalUI=1
 let NERDTreeMapHelp='<f1>' " Release the usage of ? for backwards searching
+let g:NERDTreeDirArrows = 1
+let g:NERDTreeDirArrowExpandable = '▸'
+let g:NERDTreeDirArrowCollapsible = '▾'
+let g:NERDTreeCascadeOpenSingleChildDir = 1
 
 " Tabs
 set softtabstop=4
@@ -90,21 +95,24 @@ function! IndentWithI()
         return "i"
     endif
 endfunction
-nnoremap <expr> i IndentWithI()
+"nnoremap <expr> i IndentWithI()
 
 " Theme
-if has('gui_running')
-else
-    set t_co=256
-    colo lucius
-    set background=dark
-    autocmd BufRead,BufNewFile * colorscheme lucius
-    set background=dark
-endif
+let g:gruvbox_bold = 0
+let g:gruvbox_italic = 0
+let g:gruvbox_underline = 0
+let g:gruvbox_undercurl = 0
+let g:gruvbox_contrast_dark = "soft"
+let g:gruvbox_contrast_light = "soft"
 
-autocmd BufRead,BufNewFile * syntax enable
+let g:lightline = { 'colorscheme': 'gruvbox', }
 
-set fillchars+=vert:_
+colo gruvbox
+syntax enable
+set t_Co=256
+autocmd BufRead,BufNewFile * nested colorscheme gruvbox
+
+set fillchars=
 
 " Delimitmate
 let g:delimitMate_backspace = 2
