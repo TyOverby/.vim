@@ -127,6 +127,7 @@ let g:lightline = { 'colorscheme': 'wombat', }
 colo gruvbox
 syntax enable
 set t_Co=256
+set bg=dark
 autocmd BufRead,BufNewFile * nested colorscheme gruvbox
 
 set fillchars=
