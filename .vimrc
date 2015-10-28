@@ -7,22 +7,22 @@ set rtp+=~/.vim/bundle/vundle
 call vundle#rc()
 
 " Highly Recommended
-Plugin 'tpope/vim-sensible'        " Good default vim settings
-Plugin 'tpope/vim-fugitive'        " Git commands
-Plugin 'gmarik/vundle'             " Package Manager
-Plugin 'scrooloose/syntastic'      " Syntax checker
-Plugin 'kien/ctrlp.vim'            " Fuzzy file search
-Plugin 'scrooloose/nerdtree'       " File tree
-Plugin 'jistr/vim-nerdtree-tabs'   " Better extension NerdTree
-Plugin 'Xuyuanp/nerdtree-git-plugin' " Git symbols inside NerdTree
-Plugin 'airblade/vim-gitgutter'    " Git symbols in the gutter
-Plugin 'szw/vim-ctrlspace'         " Workspace Manager
-Plugin 'Raimondi/delimitMate'      " Automatic delimeter insertion
-Plugin 'ervandew/supertab'         " Tab completion!
-Plugin 'itchyny/lightline.vim'         " Nicer status line
-Plugin '907th/vim-auto-save'       " Automatically saves files after edits
-Plugin 'rking/ag.vim'              " Integration for the ag file searcher
-Plugin 'ntpeters/vim-better-whitespace' " Remove trailing whitespace
+Plugin 'tpope/vim-sensible'             " Good default vim settings
+Plugin 'tpope/vim-fugitive'             " Git commands
+Plugin 'gmarik/vundle'                  " Package Manager
+Plugin 'scrooloose/syntastic'           " Syntax checker
+Plugin 'kien/ctrlp.vim'                 " Fuzzy file search
+Plugin 'scrooloose/nerdtree'            " File tree
+Plugin 'jistr/vim-nerdtree-tabs'        " Better extension NerdTree
+Plugin 'Xuyuanp/nerdtree-git-plugin'    " Git symbols inside NerdTree
+Plugin 'airblade/vim-gitgutter'         " Git symbols in the gutter
+Plugin 'szw/vim-ctrlspace'              " Workspace Manager
+Plugin 'Raimondi/delimitMate'           " Automatic delimeter insertion
+Plugin 'ervandew/supertab'              " Tab completion!
+Plugin 'itchyny/lightline.vim'          " Nicer status line
+Plugin '907th/vim-auto-save'            " Automatically saves files after edits
+Plugin 'rking/ag.vim'                   " Integration for the ag file searcher
+Plugin 'thirtythreeforty/lessspace.vim' " Remove trailing whitespace
 
 " Language specific
 Plugin 'plasticboy/vim-markdown'    " Markdown
@@ -127,7 +127,6 @@ let g:lightline = { 'colorscheme': 'wombat', }
 colo gruvbox
 syntax enable
 set t_Co=256
-set bg=dark
 autocmd BufRead,BufNewFile * nested colorscheme gruvbox
 
 set fillchars=
