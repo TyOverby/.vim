@@ -91,9 +91,6 @@ let g:NERDTreeIndicatorMapCustom = {
     \ "Unknown"   : "?"
     \ }
 
-" Git Gutter
-let g:gitgutter_sign_column_always = 1
-
 " Tabs
 set softtabstop=4
 set tabstop=4
@@ -181,3 +178,11 @@ set noswapfile
 
 " Automatically reload the file if it has been changed outside of vim.
 set autoread
+
+" Git Gutter
+" We save the buffer on every insert anyway
+" so this is still pretty realtime
+let g:gitgutter_realtime = 0
+let g:gitgutter_eager = 0
+let g:gitgutter_sign_column_always = 1
+
