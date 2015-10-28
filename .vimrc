@@ -101,9 +101,6 @@ set shiftwidth=4
 set expandtab
 filetype plugin indent on
 
-" Remove trailing whitespace on save
-autocmd BufWritePre * StripWhitespace
-
 "smart indent when entering insert mode with i on empty lines
 function! IndentWithI()
     if len(getline('.')) == 0
@@ -178,3 +175,9 @@ endif
 let g:syntastic_disabled_filetypes=['typescript']
 let g:syntastic_always_populate_loc_list = 1
 
+" Disable backups and swapfiles
+set nobackup
+set noswapfile
+
+" Automatically reload the file if it has been changed outside of vim.
+set autoread
