@@ -50,14 +50,12 @@ filetype plugin indent on
 " Misc editor features
 
 set autoindent
-set nobackup
 set ruler
 set suffixes=.bak,~,.swp,.o,.info,.aux,.log,.dvi,.bbl,.blg,.brf,.cb,.ind,.idx,.ilg,.inx,.out,.toc
 set showcmd
 set showmatch
 set ignorecase
 set incsearch
-set autowrite
 set ttimeout
 set ttimeoutlen=0
 
