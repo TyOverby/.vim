@@ -154,7 +154,9 @@ let g:airline_theme="hybrid"
 
 " Ctrl-Space
 set hidden
-let g:ctrlp_user_command = ['.git/', 'git --git-dir=%s/.git ls-files -oc --exclude-standard']
+
+" Ctrl-P
+let g:ctrlp_user_command = ['.git', 'cd %s && git ls-files . --cached --exclude-standard --others']
 
 " Auto Save
 let g:auto_save = 1
