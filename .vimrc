@@ -22,10 +22,12 @@ Plugin 'ervandew/supertab'         " Tab completion!
 Plugin 'itchyny/lightline.vim'         " Nicer status line
 Plugin '907th/vim-auto-save'       " Automatically saves files after edits
 Plugin 'rking/ag.vim'              " Integration for the ag file searcher
+Plugin 'vim-scripts/Align'         " Auto align text
 Plugin 'ntpeters/vim-better-whitespace' " Remove trailing whitespace
 
 " Language specific
 Plugin 'plasticboy/vim-markdown'    " Markdown
+Plugin 'cespare/vim-toml'           " Toml
 Plugin 'wting/rust.vim'             " Rust
 Plugin 'othree/html5.vim'           " Html 5
 Plugin 'leafgarland/typescript-vim' " Typescript
