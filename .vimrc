@@ -7,23 +7,23 @@ set rtp+=~/.vim/bundle/vundle
 call vundle#rc()
 
 " Highly Recommended
-Plugin 'tpope/vim-sensible'        " Good default vim settings
-Plugin 'tpope/vim-fugitive'        " Git commands
-Plugin 'gmarik/vundle'             " Package Manager
-Plugin 'scrooloose/syntastic'      " Syntax checker
-Plugin 'kien/ctrlp.vim'            " Fuzzy file search
-Plugin 'scrooloose/nerdtree'       " File tree
-Plugin 'jistr/vim-nerdtree-tabs'   " Better extension NerdTree
-Plugin 'Xuyuanp/nerdtree-git-plugin' " Git symbols inside NerdTree
-Plugin 'airblade/vim-gitgutter'    " Git symbols in the gutter
-Plugin 'szw/vim-ctrlspace'         " Workspace Manager
-Plugin 'Raimondi/delimitMate'      " Automatic delimeter insertion
-Plugin 'ervandew/supertab'         " Tab completion!
-Plugin 'itchyny/lightline.vim'         " Nicer status line
-Plugin '907th/vim-auto-save'       " Automatically saves files after edits
-Plugin 'rking/ag.vim'              " Integration for the ag file searcher
-Plugin 'vim-scripts/Align'         " Auto align text
-Plugin 'ntpeters/vim-better-whitespace' " Remove trailing whitespace
+Plugin 'tpope/vim-sensible'             " Good default vim settings
+Plugin 'vim-scripts/Align'              " Auto align text
+Plugin 'tpope/vim-fugitive'             " Git commands
+Plugin 'gmarik/vundle'                  " Package Manager
+Plugin 'scrooloose/syntastic'           " Syntax checker
+Plugin 'kien/ctrlp.vim'                 " Fuzzy file search
+Plugin 'scrooloose/nerdtree'            " File tree
+Plugin 'jistr/vim-nerdtree-tabs'        " Better extension NerdTree
+Plugin 'Xuyuanp/nerdtree-git-plugin'    " Git symbols inside NerdTree
+Plugin 'airblade/vim-gitgutter'         " Git symbols in the gutter
+Plugin 'szw/vim-ctrlspace'              " Workspace Manager
+Plugin 'Raimondi/delimitMate'           " Automatic delimeter insertion
+Plugin 'ervandew/supertab'              " Tab completion!
+Plugin 'itchyny/lightline.vim'          " Nicer status line
+Plugin '907th/vim-auto-save'            " Automatically saves files after edits
+Plugin 'rking/ag.vim'                   " Integration for the ag file searcher
+Plugin 'thirtythreeforty/lessspace.vim' " Remove trailing whitespace
 
 " Language specific
 Plugin 'plasticboy/vim-markdown'    " Markdown
@@ -52,14 +52,12 @@ filetype plugin indent on
 " Misc editor features
 
 set autoindent
-set nobackup
 set ruler
 set suffixes=.bak,~,.swp,.o,.info,.aux,.log,.dvi,.bbl,.blg,.brf,.cb,.ind,.idx,.ilg,.inx,.out,.toc
 set showcmd
 set showmatch
 set ignorecase
 set incsearch
-set autowrite
 set ttimeout
 set ttimeoutlen=0
 
@@ -93,18 +91,12 @@ let g:NERDTreeIndicatorMapCustom = {
     \ "Unknown"   : "?"
     \ }
 
-" Git Gutter
-let g:gitgutter_sign_column_always = 1
-
 " Tabs
 set softtabstop=4
 set tabstop=4
 set shiftwidth=4
 set expandtab
 filetype plugin indent on
-
-" Remove trailing whitespace on save
-autocmd BufWritePre * StripWhitespace
 
 "smart indent when entering insert mode with i on empty lines
 function! IndentWithI()
@@ -129,7 +121,6 @@ let g:lightline = { 'colorscheme': 'wombat', }
 colo gruvbox
 syntax enable
 set t_Co=256
-set bg=dark
 autocmd BufRead,BufNewFile * nested colorscheme gruvbox
 
 set fillchars=
@@ -166,6 +157,9 @@ let g:airline_theme="hybrid"
 " Ctrl-Space
 set hidden
 
+" Ctrl-P
+let g:ctrlp_user_command = ['.git', 'cd %s && git ls-files . --cached --exclude-standard --others']
+
 " Auto Save
 let g:auto_save = 1
 let g:auto_save_silent = 1
@@ -180,4 +174,18 @@ endif
 " Syntastic
 let g:syntastic_disabled_filetypes=['typescript']
 let g:syntastic_always_populate_loc_list = 1
+
+" Disable backups and swapfiles
+set nobackup
+set noswapfile
+
+" Automatically reload the file if it has been changed outside of vim.
+set autoread
+
+" Git Gutter
+" We save the buffer on every insert anyway
+" so this is still pretty realtime
+let g:gitgutter_realtime = 0
+let g:gitgutter_eager = 0
+let g:gitgutter_sign_column_always = 1
 
