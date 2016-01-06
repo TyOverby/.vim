@@ -116,6 +116,7 @@ let g:gruvbox_contrast_light = "soft"
 
 let g:lightline = { 'colorscheme': 'wombat', }
 
+set background=dark
 colo gruvbox
 syntax enable
 set t_Co=256
