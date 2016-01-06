@@ -26,7 +26,7 @@ If these commands fail, don't worry about it.
 
 # Screenshot
 
-![Vim](http://i.imgur.com/ljVQS89.png?1)
+![Vim](http://i.imgur.com/OPVVhAu.png)
 
 # Features
 
