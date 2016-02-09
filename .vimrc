@@ -29,6 +29,7 @@ Plugin 'plasticboy/vim-markdown'    " Markdown
 Plugin 'wting/rust.vim'             " Rust
 Plugin 'othree/html5.vim'           " Html 5
 Plugin 'leafgarland/typescript-vim' " Typescript
+Plugin 'PProvost/vim-ps1'           " Powershell
 
 " colors (graveyard)
 " Plugin 'jonathanfilip/vim-lucius'
@@ -85,7 +86,7 @@ let g:NERDTreeIndicatorMapCustom = {
     \ "Unmerged"  : "=",
     \ "Deleted"   : "x",
     \ "Dirty"     : "-",
-    \ "Clean"     : "",
+    \ "Clean"     : "o",
     \ "Unknown"   : "?"
     \ }
 
@@ -187,3 +188,9 @@ let g:gitgutter_realtime = 0
 let g:gitgutter_eager = 0
 let g:gitgutter_sign_column_always = 1
 
+" CtrlSpace
+set showtabline=0
+if executable("ag")
+    let g:CtrlSpaceGlobCommand = 'ag -l --nocolor -g ""'
+endif
+let g:CtrlSpaceSearchTiming = 10
