@@ -8,6 +8,7 @@ call vundle#rc()
 
 " Highly Recommended
 Plugin 'tpope/vim-sensible'             " Good default vim settings
+Plugin 'vim-scripts/Align'              " Auto align text
 Plugin 'tpope/vim-fugitive'             " Git commands
 Plugin 'gmarik/vundle'                  " Package Manager
 Plugin 'scrooloose/syntastic'           " Syntax checker
@@ -26,6 +27,7 @@ Plugin 'thirtythreeforty/lessspace.vim' " Remove trailing whitespace
 
 " Language specific
 Plugin 'plasticboy/vim-markdown'    " Markdown
+Plugin 'cespare/vim-toml'           " Toml
 Plugin 'wting/rust.vim'             " Rust
 Plugin 'othree/html5.vim'           " Html 5
 Plugin 'leafgarland/typescript-vim' " Typescript
@@ -117,6 +119,7 @@ let g:gruvbox_contrast_light = "soft"
 
 let g:lightline = { 'colorscheme': 'wombat', }
 
+set background=dark
 colo gruvbox
 syntax enable
 set t_Co=256
