@@ -192,9 +192,10 @@ let g:gitgutter_realtime = 0
 let g:gitgutter_eager = 0
 let g:gitgutter_sign_column_always = 1
 
-" Rusty-Ctags
+" Tags
 set tags+=rusty-tags.vi;/,~/workspace/rust/rust/rusty-tags.vi
 autocmd BufWrite *.rs :silent !rusty-tags vi
+map <S-TAB> :TagbarToggle<CR>
 let g:tagbar_map_help='<F1>'
 let g:tagbar_type_rust = {
     \ 'ctagstype' : 'rust',
