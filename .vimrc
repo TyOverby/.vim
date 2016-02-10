@@ -193,8 +193,9 @@ let g:gitgutter_eager = 0
 let g:gitgutter_sign_column_always = 1
 
 " Rusty-Ctags
-set tags+=rusty-tags.vi;/,path-to-rust-source-code/rusty-tags.vi
+set tags+=rusty-tags.vi;/,~/workspace/rust/rust/rusty-tags.vi
 autocmd BufWrite *.rs :silent !rusty-tags vi
+let g:tagbar_map_help='<F1>'
 let g:tagbar_type_rust = {
     \ 'ctagstype' : 'rust',
     \ 'kinds' : [
