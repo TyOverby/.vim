@@ -24,6 +24,8 @@ Plugin 'itchyny/lightline.vim'          " Nicer status line
 Plugin '907th/vim-auto-save'            " Automatically saves files after edits
 Plugin 'rking/ag.vim'                   " Integration for the ag file searcher
 Plugin 'thirtythreeforty/lessspace.vim' " Remove trailing whitespace
+Plugin 'tpope/vim-unimpaired'           " Better quickfix mappings
+Plugin 'majutsushi/tagbar'              " Ctags browser
 
 " Language specific
 Plugin 'plasticboy/vim-markdown'    " Markdown
@@ -35,7 +37,7 @@ Plugin 'PProvost/vim-ps1'           " Powershell
 
 " colors (graveyard)
 " Plugin 'jonathanfilip/vim-lucius'
-" Plugin 'chriskempson/base16-vim'
+Plugin 'chriskempson/base16-vim'
 " Plugin 'xolox/vim-misc'
 " Plugin 'xolox/vim-colorscheme-switcher'
 " Plugin 'yamafaktory/lumberjack.vim'
@@ -197,3 +199,22 @@ if executable("ag")
     let g:CtrlSpaceGlobCommand = 'ag -l --nocolor -g ""'
 endif
 let g:CtrlSpaceSearchTiming = 10
+
+" Tags
+set tags+=rusty-tags.vi;/,~/workspace/rust/rust/rusty-tags.vi
+autocmd BufWrite *.rs :silent !rusty-tags vi
+map <S-TAB> :TagbarToggle<CR>
+let g:tagbar_map_help='<F1>'
+let g:tagbar_type_rust = {
+    \ 'ctagstype' : 'rust',
+    \ 'kinds' : [
+        \'T:types',
+        \'f:functions',
+        \'g:enums',
+        \'s:structs',
+        \'m:modules',
+        \'c:consts',
+        \'t:traits',
+        \'i:implementations',
+    \]
+\}
