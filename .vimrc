@@ -26,6 +26,7 @@ Plugin 'rking/ag.vim'                   " Integration for the ag file searcher
 Plugin 'thirtythreeforty/lessspace.vim' " Remove trailing whitespace
 Plugin 'tpope/vim-unimpaired'           " Better quickfix mappings
 Plugin 'majutsushi/tagbar'              " Ctags browser
+Plugin 'myusuf3/numbers.vim'            " Line numbers
 
 " Language specific
 Plugin 'plasticboy/vim-markdown'    " Markdown
@@ -67,14 +68,12 @@ set ttimeoutlen=0
 " Misc preferences
 nnoremap ; :
 nnoremap Y y$
-au InsertEnter * :set nornu| set nu
-au InsertLeave * :set rnu
-set rnu
+set nu
 autocmd BufRead,BufNewFile * setlocal nospell
 set viminfo=
 
 " NERDTree options
-map <Tab> :NERDTreeTabsToggle<CR>
+map <silent> <Tab> :NERDTreeTabsToggle<CR>
 let NERDTreeMinimalUI=1
 let NERDTreeMapHelp='<f1>' " Release the usage of ? for backwards searching
 let g:NERDTreeDirArrows = 1
@@ -203,7 +202,7 @@ let g:CtrlSpaceSearchTiming = 10
 " Tags
 set tags+=rusty-tags.vi;/,~/workspace/rust/rust/rusty-tags.vi
 autocmd BufWrite *.rs :silent !rusty-tags vi
-map <S-TAB> :TagbarToggle<CR>
+map <silent> <S-TAB> :TagbarToggle<CR>
 let g:tagbar_map_help='<F1>'
 let g:tagbar_type_rust = {
     \ 'ctagstype' : 'rust',
@@ -218,3 +217,6 @@ let g:tagbar_type_rust = {
         \'i:implementations',
     \]
 \}
+
+" Csharp sript syntax
+au BufRead,BufNewFile *.csx setfiletype cs
